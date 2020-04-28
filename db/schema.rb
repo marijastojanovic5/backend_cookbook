@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2020_04_27_165945) do
 
   create_table "ingredients", force: :cascade do |t|
     t.string "name"
-    t.integer "amount"
+    t.float "amount"
     t.string "unit"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
