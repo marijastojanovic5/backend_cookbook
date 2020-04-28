@@ -15,12 +15,12 @@ recipe_array.each do |recipe|
     cook_time = recipe['readyInMinutes']
     instructions = recipe['instructions']
     picture = recipe['image']
-    calories = recipe['healthScore']
+    health_score = recipe['healthScore']
     gluten_free = recipe['glutenFree']
     vegetarian = recipe['vegetarian']
     vegan = recipe['vegan']
     dairy_free = recipe['dairyFree']
-    Recipe.create(title: title, rating: rating, cook_time: cook_time, instructions: instructions, picture: picture, calories: calories, gluten_free: gluten_free, vegetarian: vegetarian, vegan: vegan, dairy_free: dairy_free)
+    Recipe.create(title: title, rating: rating, cook_time: cook_time, instructions: instructions, picture: picture, health_score: health_score, gluten_free: gluten_free, vegetarian: vegetarian, vegan: vegan, dairy_free: dairy_free)
   end
 
   recipe_array.each do |recipe|

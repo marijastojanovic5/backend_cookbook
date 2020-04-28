@@ -6,7 +6,12 @@ class RecipesController < ApplicationController
             {:except => [:created_at, :updated_at]}
         )
     end
-    def
+    def show
+        recipe = Recipe.find(params[:id])
+        render json:  recipe.to_json(
+            {:except => [:created_at, :updated_at]}
+        )
+    end
 
     
 end

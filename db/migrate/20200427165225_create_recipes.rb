@@ -7,7 +7,7 @@ class CreateRecipes < ActiveRecord::Migration[6.0]
       t.integer :cook_time
       t.text :instructions
       t.string :picture
-      t.integer :calories
+      t.integer :health_score
       t.boolean :gluten_free
       t.boolean :vegetarian
       t.boolean :vegan

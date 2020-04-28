@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2020_04_27_165945) do
     t.integer "cook_time"
     t.text "instructions"
     t.string "picture"
-    t.integer "calories"
+    t.integer "health_score"
     t.boolean "gluten_free"
     t.boolean "vegetarian"
     t.boolean "vegan"
