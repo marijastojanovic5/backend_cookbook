@@ -3,8 +3,7 @@ class RecipesController < ApplicationController
     def index
         recipe =Recipe.all
         render json: recipe.to_json(
-            {:except => [:created_at, :updated_at]}
-        )
+            {:except => [:created_at, :updated_at], :include =>:ingredients})
     end
     def show
         recipe = Recipe.find(params[:id])
