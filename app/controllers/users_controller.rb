@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
     def index
         user=User.all
-        render json: user.map{ |user| {user: user, favorites: user.recipe}}
+        render json: user.map{ |user| {user: user, favorites: user.recipes}}
         
     end
     def show
