@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
     def index
-        user=User.all
-        render json: {user: user, favorites: user.recipes}
+        render json: User.all
         
     end
     def show
@@ -18,8 +17,7 @@ class UsersController < ApplicationController
 
     def login
         user = User.find_by(username: params[:username], password: params[:password])
-        
-        render json:  { user: user, favorites: user.recipes }
+        render json:  { user: user, favorites: user.recipes}
       
     end
     
