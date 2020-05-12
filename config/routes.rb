@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :users
+  resources :users, only: [:index, :show, :create]
+  post '/login', to: "users#login"
   resources :recipes
   post '/favoriterecipe', to: "recipes#favorite"
   resources :ingredients 
