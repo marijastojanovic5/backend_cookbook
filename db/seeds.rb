@@ -11,7 +11,6 @@ recipe_array = recipes['recipes']
 
 recipe_array.each do |recipe|
     title = recipe['title']
-    rating = recipe['aggregateLikes']
     cook_time = recipe['readyInMinutes']
     instructions = recipe['instructions']
     picture = recipe['image']
@@ -20,10 +19,10 @@ recipe_array.each do |recipe|
     vegetarian = recipe['vegetarian']
     vegan = recipe['vegan']
     dairy_free = recipe['dairyFree']
-    Recipe.create(title: title, rating: rating, cook_time: cook_time, instructions: instructions, picture: picture, health_score: health_score, gluten_free: gluten_free, vegetarian: vegetarian, vegan: vegan, dairy_free: dairy_free)
+    Recipe.create(title: title, cook_time: cook_time, instructions: instructions, picture: picture, health_score: health_score, gluten_free: gluten_free, vegetarian: vegetarian, vegan: vegan, dairy_free: dairy_free)
   end
 
-  roasted_chicken = Recipe.find_or_create_by(title: "Roasted Chicken", rating: 10, cook_time: 30, instructions: "Roast in the oven", picture: "picture", health_score: 20, gluten_free: true, vegetarian: false, vegan: false, dairy_free: true)
+roasted_chicken = Recipe.find_or_create_by(title: "Roasted Chicken",cook_time: 30, instructions: "Roast in the oven", picture: "picture", health_score: 20, gluten_free: true, vegetarian: false, vegan: false, dairy_free: true)
 chicken = Ingredient.find_or_create_by(name:"Chicken", amount: 1.0, unit: "whole")
 garlic = Ingredient.find_or_create_by(name:"Garlic", amount: 1.0, unit: "clove")
 sugar = Ingredient.find_or_create_by(name:"Sugar", amount: 1.0, unit: "tsp")

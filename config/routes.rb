@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   delete '/favoriterecipe/:user_id/:recipe_id', to: 'recipes#destroy'
   resources :ingredients 
   resources :favorites
+  resources :reviews, only: [:index, :create,:edit, :destroy]
 
 
 
