@@ -1,17 +1,12 @@
 class ReviewsController < ApplicationController
     def create
-        byebug
-        
+       
+        review = Review.create(user_id: params[:user_id], recipe_id: params[:recipe_id], rating: params[:rating],review: params["reviewText"])
+        render json: { recipe_id: review.recipe, review: review.review, id: review.id, rating: review.rating}
     end
-    # def create
-        
-    #     comment = Comment.find_or_create_by(user_id: params[:user_id], mars_card_id: params[:mars_card_id],comment: params[:comment])
-    #     render json: { mars_card_id: comment.mars_card, comment: comment.comment,id: comment.id} 
-
-    # end
+    
 
     # def destroy
-        
     #     comment =Comment.find(params[:id])
     #     comment.destroy
     
