@@ -17,7 +17,7 @@ class UsersController < ApplicationController
         status: :created
         }
         else
-        render json: {error: "Failed to create user"},srtatus: :not_acceptable
+        render json: {error: "Failed to create user"},status: :not_acceptable
 
         end
     end
@@ -27,8 +27,7 @@ class UsersController < ApplicationController
         user = User.find_by(username: params[:username])
         if user && user.authenticate(params[:password])
         render json:  { user: user, favorites: user.recipes,successful: true}
-        #  user: user,
-        #  token: encode("id": user.id)
+       
         else 
            render json: {
             message: "Incorrect username or password",
