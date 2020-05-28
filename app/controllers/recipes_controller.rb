@@ -12,10 +12,12 @@ class RecipesController < ApplicationController
                
 
     end
-    # need to add user and ingredients to the create method for a new recipe
   def create
+    byebug
+
     
     recipe = Recipe.create(title: params[:title], cook_time: params[:cookTime], instructions: params[:instructions], picture: params[:picture], gluten_free: params[:gluten], vegetarian: params[:vegetarian], dairy_free: params[:dairy], vegan: params[:vegan])
+    recipe.ingredient_ids= params[:ingredients].map {|ing|ing[:id]}
     render json: { recipe: recipe}
   end
     def favorite
