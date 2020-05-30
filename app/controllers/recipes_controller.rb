@@ -13,12 +13,9 @@ class RecipesController < ApplicationController
 
     end
   def create
-    byebug
-
-    
     recipe = Recipe.create(title: params[:title], cook_time: params[:cookTime], instructions: params[:instructions], picture: params[:picture], gluten_free: params[:gluten], vegetarian: params[:vegetarian], dairy_free: params[:dairy], vegan: params[:vegan])
-    recipe.ingredient_ids= params[:ingredients].map {|ing|ing[:id]}
-    render json: { recipe: recipe}
+    recipe.ingredient_ids= params[:ingredients].map {|ing|ing[:id]} 
+    render json: recipe
   end
     def favorite
         favorite_rec= Favorite.find_or_create_by(user_id: params[:user_id], recipe_id: params[:recipe_id])
