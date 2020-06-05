@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     end
 
     def create
+        
         user =User.create(first_name: params[:firstName],last_name: params[:lastName],username: params[:username],password: params[:password])
         if user.valid?
         render json: {user: user,favorites: user.recipes,
@@ -23,10 +24,16 @@ class UsersController < ApplicationController
     end
 
     def login
+       
         
         user = User.find_by(username: params[:username])
         if user && user.authenticate(params[:password])
-        render json:  { user: user, favorites: user.recipes,successful: true}
+           
+        render json:  { user: user, 
+        favorites: user.recipes,
+        successful: true,
+        token: encode({"id": user.id}) 
+        }  
        
         else 
            render json: {
@@ -36,6 +43,12 @@ class UsersController < ApplicationController
         
         end
       
+    end
+
+    def profile
+      token=  request.headers["Authentication"]
+      user= User.find(decode(token)["id"])
+      render json: user
     end
     
 end
