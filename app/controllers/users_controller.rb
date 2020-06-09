@@ -46,9 +46,10 @@ class UsersController < ApplicationController
     end
 
     def profile
+        
       token=  request.headers["Authentication"]
       user= User.find(decode(token)["id"])
-      render json: user
+      render json: {user: user, favorites: user.recipes}
     end
     
 end
