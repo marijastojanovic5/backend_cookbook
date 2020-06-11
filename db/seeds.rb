@@ -6,26 +6,26 @@ Ingredient.destroy_all
 RecipeIngredient.destroy_all
 
 
-# api_key=Rails.application.credentials.spoonacular[:api_key]
-# response_recipe =RestClient.get("https://api.spoonacular.com/recipes/random?number=10&apiKey=#{api_key}")
-# recipes = JSON.parse(response_recipe)
-# recipe_array = recipes['recipes']
+api_key=Rails.application.credentials[:api_key]
+response_recipe =RestClient.get("https://api.spoonacular.com/recipes/random?number=10&apiKey=#{api_key}")
+recipes = JSON.parse(response_recipe)
+recipe_array = recipes['recipes']
 
-# recipe_array.each do |recipe|
-#     title = recipe['title']
-#     cook_time = recipe['readyInMinutes']
-#     instructions = recipe['instructions']
-#     picture = recipe['image']
-#     health_score = recipe['healthScore']
-#     gluten_free = recipe['glutenFree']
-#     vegetarian = recipe['vegetarian']
-#     vegan = recipe['vegan']
-#     dairy_free = recipe['dairyFree']
-#     Recipe.create(title: title, cook_time: cook_time, instructions: instructions, picture: picture, health_score: health_score, gluten_free: gluten_free, vegetarian: vegetarian, vegan: vegan, dairy_free: dairy_free)
-#   end
+recipe_array.each do |recipe|
+    title = recipe['title']
+    cook_time = recipe['readyInMinutes']
+    instructions = recipe['instructions']
+    picture = recipe['image']
+    health_score = recipe['healthScore']
+    gluten_free = recipe['glutenFree']
+    vegetarian = recipe['vegetarian']
+    vegan = recipe['vegan']
+    dairy_free = recipe['dairyFree']
+    Recipe.create(title: title, cook_time: cook_time, instructions: instructions, picture: picture, health_score: health_score, gluten_free: gluten_free, vegetarian: vegetarian, vegan: vegan, dairy_free: dairy_free)
+  end
 
 
-mostPopularFoods = [
+food = [
 "spice powder", 
 "acorn squash", 
 "adobo sauce", 
@@ -1026,6 +1026,6 @@ mostPopularFoods = [
 "yukon gold potato" ]
 
 
-mostPopularFoods.each do | food |
-    food = Ingredient.find_or_create_by(name: food)
+food.each do | ing |
+    ing = Ingredient.find_or_create_by(name: ing)
 end
