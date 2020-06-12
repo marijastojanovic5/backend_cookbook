@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :users, only: [:index, :show, :create]
+  resources :users
   post '/login', to: "users#login"
   resources :reviews
   delete '/recipes/:recipe_id',to: 'reviews#destroy'

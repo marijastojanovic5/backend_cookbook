@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+   
     def index
         user =User.all
         render json: user.to_json(
@@ -9,6 +10,8 @@ class UsersController < ApplicationController
         render json: {user: user, favorites: user.recipes}
 
     end
+    
+    
 
     def create
         
@@ -43,6 +46,15 @@ class UsersController < ApplicationController
         
         end
       
+    end
+    def update
+        user= User.find(params[:id])
+        user.bio = params[:bio]
+        user.picture = params[:picture]
+        user.save
+        render json: {user: user, favorites: user.recipes}
+
+
     end
 
     def profile
