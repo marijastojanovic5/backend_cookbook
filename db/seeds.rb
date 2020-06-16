@@ -332,6 +332,7 @@ food = [
 "duck fat", 
 "dutch process cocoa powder", 
 "edamame", 
+"egg",
 "egg substitute", 
 "egg vermicelli", 
 "egg whites", 
