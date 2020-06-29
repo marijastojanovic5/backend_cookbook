@@ -1,24 +1,27 @@
-# README
+<h2>COOKBOOK</h2>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is application that lets you explore a lot of recipes, post your own and share them with other users. You can favorite them and rate them. You can also delete your reviews and delete the recipes from your list of favorites. Enjoy!
+***
+You will need to  clone frontend application repo in order to explore the app.(<a href="https://github.com/marijastojanovic5/frontend_cookbook">CookBook Frontend</a>)
+***
+<h4>Database Setup</h4>
 
-Things you may want to cover:
+Run <b>bundle install</b> to make sure everything is up to date. This app runs on Postgresql.</br>
 
-* Ruby version
+run <b>db:create</b></br>
+run <b>db:migrate</b></br>
 
-* System dependencies
+To start app on your local server:</br>
 
-* Configuration
+run <b>rails s </b> (open up http://localhost:3000 in your browser)</br>
+***
 
-* Database creation
+<h4>Frameworks and Libraries used</h4>
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Front-end: JavaScript and React.js + Redux </br>
+Back-end: Ruby on Rails</br>
+Styling: Bootstrap,CSS</br>
+***
+<h4>Authors</h4>
+Dean Hildebrand (<a href="https://www.linkedin.com/in/hildebranddean/">Linkedin</a>)
+Marija Stojanovic (<a href="https://www.linkedin.com/in/marijastojanovic1987/">Linkedin</a>)
